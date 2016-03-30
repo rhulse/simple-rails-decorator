@@ -12,7 +12,9 @@ You can also create your own methods that call the underlying model object, and 
 
 To use this decorator pattern create a folder in your Rails project:
 
+```
   app/decorators
+```
 
 and copy the application_decorator.rb into it.
 
@@ -20,15 +22,21 @@ The thing_deocorator.rb is an example file
 
 Into the application.rb add
 
+```
   config.autoload_paths << #{config.root}/app/decorators
-  
+```
+
 To call the decorator in a controller:
 
+```
   @thing = ThingDecorator.new(@thing, view_context)
+```
 
 Or in a view (if you really must), or a helper:
 
+```
   @thing = ThingDecorator.new(@thing, self)
+```
 
 I've found the discipline of having to add the pass-through methods at the top of the decorator to be quite useful. Why am I calling this method direct? What is it being used for?
 
@@ -42,10 +50,10 @@ For testing I use rspec. Add a decorators folders inside spec.
 
 Add this to your rspec config to tell it the decorator path and that it is a view
 
-RSpec.configure do |config|
-  config.include ActionView::TestCase::Behavior, file_path: %r{spec/decorators}
-end
+```
+  RSpec.configure do |config|
+    config.include ActionView::TestCase::Behavior, file_path: %r{spec/decorators} 
+  end
+```
 
 I welcome any feedback or suggestions. 
-
-  
