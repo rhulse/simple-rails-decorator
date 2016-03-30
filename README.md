@@ -1,6 +1,6 @@
 # Simple Rails Decorator
 
-This code is an extraction of the simpe decorator I use in the Rails app that powers radionz.co.nz
+This code is an extraction of the simple decorator I use in the Rails app that powers radionz.co.nz
 
 The aim was to be as thin and performant as possible.
 
