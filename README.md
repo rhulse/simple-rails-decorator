@@ -38,6 +38,14 @@ For example, audio and news objects in my app both share code from story_decorat
 
 This ensures maximum sharing of code, while minimising the number of methods exposed in the view.
 
+For testing I use rspec. Add a decorators folders inside spec.
+
+Add this to your rspec config to tell it the decorator path and that it is a view
+
+RSpec.configure do |config|
+  config.include ActionView::TestCase::Behavior, file_path: %r{spec/decorators}
+end
+
 I welcome any feedback or suggestions. 
 
   
