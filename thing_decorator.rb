@@ -6,7 +6,7 @@ class ThingDecorator < ApplicationDecorator
 
   THING_PASS_THROUGH_METHODS.each do |method|
     define_method method do |*args|
-      episode.send(method){args}
+      o.send(method){args}
     end
   end
   
